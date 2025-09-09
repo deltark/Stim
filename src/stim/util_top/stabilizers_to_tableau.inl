@@ -84,18 +84,18 @@ Tableau<W> stabilizers_to_tableau(
 
         // Check for incompatible / redundant stabilizers.
         if (pivot == num_qubits) {
-            if (buf_signs[k]) {
-                std::stringstream ss;
-                ss << "Some of the given stabilizers contradict each other.\n";
-                ss << "For example:";
-                ss << "\n    stabilizers[" << k << "] = " << stabilizers[k];
-                ss << "\nis the negation of the product of the following stabilizers: {";
-                print_redundant_z_product_parts(k, ss);
-                ss << "\n}";
+            // if (buf_signs[k]) {
+            //     std::stringstream ss;
+            //     ss << "Some of the given stabilizers contradict each other.\n";
+            //     ss << "For example:";
+            //     ss << "\n    stabilizers[" << k << "] = " << stabilizers[k];
+            //     ss << "\nis the negation of the product of the following stabilizers: {";
+            //     print_redundant_z_product_parts(k, ss);
+            //     ss << "\n}";
                 // throw std::invalid_argument(ss.str());
-                stabilizers.erase(stabilizers.begin()+k);
-                k--;
-            }
+                // stabilizers.erase(stabilizers.begin()+k);
+                // k--;
+            // }
             if (!allow_redundant) {
                 std::stringstream ss;
                 ss << "Some of the given stabilizers are redundant.";
