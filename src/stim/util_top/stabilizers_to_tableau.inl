@@ -93,8 +93,8 @@ Tableau<W> stabilizers_to_tableau(
                 print_redundant_z_product_parts(k, ss);
                 ss << "\n}";
                 // throw std::invalid_argument(ss.str());
-                stabilizers.erase(k)
-                k--
+                stabilizers.erase(k);
+                k--;
             }
             if (!allow_redundant) {
                 std::stringstream ss;
