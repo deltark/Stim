@@ -92,7 +92,8 @@ Tableau<W> stabilizers_to_tableau(
                 ss << "\nis the negation of the product of the following stabilizers: {";
                 print_redundant_z_product_parts(k, ss);
                 ss << "\n}";
-                throw std::invalid_argument(ss.str());
+                // throw std::invalid_argument(ss.str());
+                std::cout << ss.str() << std::endl;
             }
             if (!allow_redundant) {
                 std::stringstream ss;
@@ -104,8 +105,7 @@ Tableau<W> stabilizers_to_tableau(
                 ss << "\nis the product of the following stabilizers: {";
                 print_redundant_z_product_parts(k, ss);
                 ss << "\n}";
-                // throw std::invalid_argument(ss.str());
-                std::cout << ss.str() << std::endl;
+                throw std::invalid_argument(ss.str());
             }
             continue;
         }
